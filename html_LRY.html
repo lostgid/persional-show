@@ -1,61 +1,19 @@
-<html><head>
-		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
-	<script id="picviewer-page-script">(function (messageID){
-"use strict";
-
-		var frameID=Math.random();
-		var frames={
-			top:window.top,
-		};
-
-		window.addEventListener('message',function(e){
-			var data=e.data;
-			if( !data || !data.messageID || data.messageID != messageID )return;
-			var source=e.source;
-			if(source===window){
-				if(data.to){
-					data.from=frameID;
-					frames[data.to].postMessage(data,'*');
-				}else{
-					switch(data.command){
-						case 'getIframeObject':{
-							var frameWindow=frames[data.windowId];
-							var iframes=document.getElementsByTagName('iframe');
-							var iframe;
-							var targetIframe;
-							for(var i=iframes.length-1 ; i>=0 ; i--){
-								iframe=iframes[i];
-								if(iframe.contentWindow===frameWindow){
-									targetIframe=iframe;
-									break;
-								};
-							};
-							var cusEvent=document.createEvent('CustomEvent');
-							cusEvent.initCustomEvent('pv-getIframeObject',false,false,targetIframe);
-							document.dispatchEvent(cusEvent);
-						}break;
-					};
-				};
-
-			}else{
-				frames[data.from]=source;
-			};
-		},true)
-	})("pv-0.5106795670312598")</script></head> 
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gbk"></head> 
+	
 	<body>
 		
 		
 		<table width="100%">
   <tbody><tr>
-    <td align="right"><font color="#FF0000">*</font>ÓÃ»§Ãû:</td>
-    <td><input size="30" type="text"> <font color="red">ÓÃ»§Ãû²»µÃĞ¡ÓÚ3¸ö×Ö·û</font></td>
+    <td align="right"><font color="#FF0000">*</font>ç”¨æˆ·å:</td>
+    <td><input size="30" type="text"> <font color="red">ç”¨æˆ·åä¸å¾—å°äº3ä¸ªå­—ç¬¦</font></td>
   </tr>
   <tr>
-    <td align="right"><font color="#FF0000">*</font>ÃÜÂë:</td>
+    <td align="right"><font color="#FF0000">*</font>å¯†ç :</td>
     <td><input name="text" size="30" type="text"></td>
   </tr>
   <tr>
-    <td align="right"><font color="#FF0000">*</font>È·ÈÏÃÜÂë:</td>
+    <td align="right"><font color="#FF0000">*</font>ç¡®è®¤å¯†ç :</td>
     <td><input name="text2" size="30" type="text"></td>
   </tr>
   <tr>
@@ -63,20 +21,20 @@
     <td><input name="text3" size="30" type="text"></td>
   </tr>
   <tr>
-    <td align="right"><font color="#FF0000">*</font>ÕæÊÇĞÕÃû:</td>
+    <td align="right"><font color="#FF0000">*</font>çœŸæ˜¯å§“å:</td>
     <td><input name="text4" size="30" type="text"></td>
   </tr>
   <tr>
-    <td align="right"><font color="#FF0000">*</font>ĞÔ±ğ:</td>
+    <td align="right"><font color="#FF0000">*</font>æ€§åˆ«:</td>
     <td>
 		<select>
-			<option selected="selected">ÄĞ</option>
-			<option>Å®</option>			
+			<option selected="selected">ç”·</option>
+			<option>å¥³</option>			
 		</select>
 	</td>
   </tr>
   <tr>
-    <td align="right"><font color="#FF0000">*</font>ÉúÈÕ:</td>
+    <td align="right"><font color="#FF0000">*</font>ç”Ÿæ—¥:</td>
     <td><select name="select">
       <option selected="selected">1980</option>
       <option>1981</option>
@@ -107,47 +65,47 @@
       </select></td>
   </tr>
   <tr>
-    <td align="right"><font color="#FF0000">*</font>ÊÖ»ú:</td>
+    <td align="right"><font color="#FF0000">*</font>æ‰‹æœº:</td>
     <td><input name="text7" size="30" type="text"></td>
   </tr>
   <tr>
-    <td align="right"><font color="#FF0000">*</font>¾Ó×¡µØ:</td>
+    <td align="right"><font color="#FF0000">*</font>å±…ä½åœ°:</td>
     <td><select name="select4">
-      <option selected="selected">ÉÏº£ÊĞ</option>
-      <option>ºÓÄÏÊ¡</option>
-      <option>¹ã¶«Ê¡</option>
-      <option>ºÓ±±Ê¡</option>
-      <option>ºÚÁú½­Ê¡</option>
-      <option>º£ÄÏÊ¡</option>
-      <option>°²»ÕÊ¡</option>
-      <option>ÄÚÃÉ¹ÅÊ¡</option>
-      <option>¹ãÎ÷Ê¡</option>
-      <option>ºşÄÏÊ¡</option>
-      <option>ºş±±Ê¡</option>
-      <option>Õã½­Ê¡</option>
+      <option selected="selected">ä¸Šæµ·å¸‚</option>
+      <option>æ²³å—çœ</option>
+      <option>å¹¿ä¸œçœ</option>
+      <option>æ²³åŒ—çœ</option>
+      <option>é»‘é¾™æ±Ÿçœ</option>
+      <option>æµ·å—çœ</option>
+      <option>å®‰å¾½çœ</option>
+      <option>å†…è’™å¤çœ</option>
+      <option>å¹¿è¥¿çœ</option>
+      <option>æ¹–å—çœ</option>
+      <option>æ¹–åŒ—çœ</option>
+      <option>æµ™æ±Ÿçœ</option>
     </select>
       <select name="select5">
-        <option selected="selected">ÆÖ¶«ĞÂÇø</option>
-        <option>ÖØÇìÊĞ</option>
+        <option selected="selected">æµ¦ä¸œæ–°åŒº</option>
+        <option>é‡åº†å¸‚</option>
         <option>...</option>
-        <option>±±¾©ÊĞ</option>
+        <option>åŒ—äº¬å¸‚</option>
       </select> <select name="select6">
-        <option selected="selected">ÄÏ»ãÇø</option>
-        <option>ºç¿ÚÇø</option>
+        <option selected="selected">å—æ±‡åŒº</option>
+        <option>è™¹å£åŒº</option>
         <option>...</option>
-        <option>½ğÅ£Çø</option>
+        <option>é‡‘ç‰›åŒº</option>
       </select> <select name="select7">
-        <option selected="selected">»İÄÏÕò</option>
-        <option>ÀÏ¸ÛÕò</option>
+        <option selected="selected">æƒ å—é•‡</option>
+        <option>è€æ¸¯é•‡</option>
         <option>...</option>
-        <option>×£ÇÅÕò</option>
+        <option>ç¥æ¡¥é•‡</option>
       </select></td>
   </tr>
   <tr>
     <td align="right"><font color="#FF0000">*</font>QQ:</td>
     <td><input name="text9" size="30" type="text">
 	<br>
-		<font color="#0099FF" size="-1">ÉèÖÃÎÒµÄQQÔÚÏß×´Ì¬</font>
+		<font color="#0099FF" size="-1">è®¾ç½®æˆ‘çš„QQåœ¨çº¿çŠ¶æ€</font>
 	</td>
   </tr>
 </tbody></table>
